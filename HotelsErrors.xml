@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Hotel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="Hotels.xsd">
+
+  <!-- OK Hotel (for comparison) -->
+  <Hotel Rating="4.2">
+    <Name>Westin</Name>
+    <Phone>480-968-8885</Phone>
+    <Phone>800-937-8461</Phone>
+    <Address NearstAirport="Sky Harbor">
+      <Number>11</Number>
+      <Street>E. 7th St</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+    </Address>
+  </Hotel>
+
+  <!-- Error 1: Root tag is <Hotel> instead of <Hotels> (already applied above) -->
+
+  <!-- Error 2: Missing required attribute "NearstAirport" -->
+  <Hotel>
+    <Name>Hilton Garden Inn</Name>
+    <Phone>480-967-4711</Phone>
+    <Address> <!-- Missing NearstAirport -->
+      <Number>750</Number>
+      <Street>W Baseline Rd</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85283</Zip>
+    </Address>
+  </Hotel>
+
+  <!-- Error 3: No <Phone> element -->
+  <Hotel Rating="4.0">
+    <Name>Holiday Inn</Name>
+    <Address NearstAirport="JFK International">
+      <Number>125</Number>
+      <Street>W 26th St</Street>
+      <City>New York</City>
+      <State>NY</State>
+      <Zip>10001</Zip>
+    </Address>
+  </Hotel>
+
+  <!-- Error 4: No closing tag for <Address> -->
+  <Hotel Rating="4.7">
+    <Name>Hyatt Regency</Name>
+    <Phone>713-654-1234</Phone>
+    <Address NearstAirport="George Bush Intercontinental">
+      <Number>1200</Number>
+      <Street>Louisiana St</Street>
+      <City>Houston</City>
+      <State>TX</State>
+      <Zip>77002</Zip>
+    <!-- Missing </Address> -->
+  </Hotel>
+
+  <!-- Error 5: Two <Name> tags -->
+  <Hotel>
+    <Name>The Peabody</Name>
+    <Name>Wrong Duplicate</Name>
+    <Phone>901-529-4000</Phone>
+    <Phone>800-732-2639</Phone>
+    <Address NearstAirport="Memphis International">
+      <Number>149</Number>
+      <Street>Union Ave</Street>
+      <City>Memphis</City>
+      <State>TN</State>
+      <Zip>38103</Zip>
+    </Address>
+  </Hotel>
+
+</Hotel>
